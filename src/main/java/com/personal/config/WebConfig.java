@@ -21,4 +21,9 @@ public class WebConfig extends AbstractAnnotationConfigDispatcherServletInitiali
 		return new String[] { "/" };
 	}
 
+	@Override
+	protected void customizeRegistration(javax.servlet.ServletRegistration.Dynamic registration) {
+		registration.setInitParameter("throwExceptionIfNoHandlerFound", "true");
+	}
+
 }
